@@ -38,15 +38,27 @@ Traditional VPN-based access grants broad network access after a single authenti
 
 ## Project Structure
 ztna-project/
-├── app/
-│   ├── main.py          # FastAPI app entrypoint
-│   ├── auth.py          # JWT logic, login/refresh endpoints
-│   ├── risk_engine.py   # Trust score calculation & aggregation
-│   └── models.py        # Pydantic models / DB schema
-├── database/
-│   └── ztna.db
+├── README.md
+├── .gitignore
 ├── requirements.txt
-└── README.md
+│
+├── app/
+│   ├── main.py              # FastAPI app entrypoint — starts the server, includes routers
+│   ├── auth.py              # Login endpoint, JWT creation, refresh token logic
+│   ├── models.py            # Pydantic models (request/response shapes) + DB table schema
+│   ├── database.py          # SQLite connection setup
+│   │
+│   └── risk/
+│       ├── identity_risk.py      # Shreya V R — credential/identity scoring
+│       ├── device_risk.py        # Vaishnavi R D — device & location scoring
+│       └── risk_engine.py        # Akash P Bhat — combines all sub-scores, final decision
+│
+├── database/
+│   └── ztna.db              # SQLite database file (auto-created on first run)
+│
+└── frontend/
+    └── (teammate's frontend files, if part of this repo)
+
 ## Setup
 
 ```bash
