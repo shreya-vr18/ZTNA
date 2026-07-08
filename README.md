@@ -37,28 +37,28 @@ Traditional VPN-based access grants broad network access after a single authenti
 | Akash P Bhat | Behavioral Risk & Trust Score Aggregation |
 
 ## Project Structure
+
+```text
 ztna-project/
 ├── README.md
 ├── .gitignore
 ├── requirements.txt
-│
 ├── app/
-│   ├── main.py              # FastAPI app entrypoint — starts the server, includes routers
-│   ├── auth.py              # Login endpoint, JWT creation, refresh token logic
-│   ├── models.py            # Pydantic models (request/response shapes) + DB table schema
+│   ├── main.py              # FastAPI app entrypoint
+│   ├── auth.py              # Login endpoint, JWT creation, refresh logic
+│   ├── models.py            # Pydantic models + DB schema
 │   ├── database.py          # SQLite connection setup
-│   │
 │   └── risk/
-│       ├── identity_risk.py      # Shreya V R — credential/identity scoring
-│       ├── device_risk.py        # Vaishnavi R D — device & location scoring
-│       └── risk_engine.py        # Akash P Bhat — combines all sub-scores, final decision
+│       ├── identity_risk.py     # Shreya V R — identity/credential scoring
+│       ├── device_risk.py       # Vaishnavi R D — device & location scoring
+│       └── risk_engine.py       # Akash P Bhat — aggregation & final decision
 │
 ├── database/
-│   └── ztna.db              # SQLite database file (auto-created on first run)
+│   └── ztna.db               # SQLite database file (auto-created on first run)
 │
 └── frontend/
     └── (teammate's frontend files, if part of this repo)
-
+```
 ## Setup
 
 ```bash
