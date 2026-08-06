@@ -1,15 +1,11 @@
 from fastapi import FastAPI
-from app.gateway import router as gateway_router
+
+from .auth import router as auth_router
+from .gateway import router as gateway_router
 
 app = FastAPI(
-    title="ZTNA Gateway API",
+    title="ZTNA Backend",
     version="1.0"
-)
-
-app.include_router(
-    gateway_router,
-    prefix="/gateway",
-    tags=["Gateway"]
 )
 
 @app.get("/health")
@@ -17,3 +13,10 @@ def health():
     return {
         "status": "Server is running"
     }
+
+app.include_router(auth_router)
+app.include_router(
+    gateway_router,
+    prefix="/gateway",
+    tags=["Gateway"]
+)
