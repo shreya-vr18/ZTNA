@@ -13,6 +13,7 @@ final decision.
 """
 
 from ..models import RiskEvaluationRequest, RiskEvaluationResponse
+
 GRANT_THRESHOLD = 0.3
 STEP_UP_THRESHOLD = 0.6
 
