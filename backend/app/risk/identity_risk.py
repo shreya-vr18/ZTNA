@@ -15,7 +15,7 @@ Signals used:
 Score is 0.0 (no identity risk) -> 1.0 (very high identity risk).
 """
 
-from app.models import IdentityRiskInput, IdentityRiskOutput
+from ..models import IdentityRiskInput, IdentityRiskOutput
 
 FAILED_LOGIN_THRESHOLD = 3
 NEW_ACCOUNT_DAYS_THRESHOLD = 7
