@@ -12,8 +12,7 @@ final decision.
     else                  -> "deny"
 """
 
-from app.models import RiskEvaluationRequest, RiskEvaluationResponse
-
+from ..models import RiskEvaluationRequest, RiskEvaluationResponse
 GRANT_THRESHOLD = 0.3
 STEP_UP_THRESHOLD = 0.6
 
