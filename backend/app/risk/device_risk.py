@@ -10,7 +10,7 @@ Score should be 0.0 (low risk) -> 1.0 (high risk), same scale as
 identity_risk.py, so risk_engine.py can combine them directly.
 """
 
-from app.models import DeviceRiskInput, DeviceRiskOutput
+from ..models import DeviceRiskInput, DeviceRiskOutput
 
 
 def score_device_risk(data: DeviceRiskInput) -> DeviceRiskOutput:
