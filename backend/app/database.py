@@ -11,7 +11,8 @@ up with schema drift between modules.
 import sqlite3
 from pathlib import Path
 
-DB_PATH = Path(__file__).resolve().parent.parent / "database" / "ztna.db"
+# change (whatever the old root-relative path was) to:
+DB_PATH = Path(__file__).resolve().parent.parent.parent / "db" / "ztna.db"
 DB_PATH.parent.mkdir(exist_ok=True)
 
 
