@@ -56,3 +56,15 @@ class RiskEvaluationResponse(BaseModel):
     final_risk_score: float
     decision: str  # "grant" | "deny" | "step_up"
     token: Optional[str] = None
+
+class BrokerEvaluateRequest(BaseModel):
+    user_id: int
+    device_trust_score: float  # 0.0 (untrusted) - 1.0 (fully trusted)
+    login_hour: int
+    geo: str
+
+
+class BrokerEvaluateResponse(BaseModel):
+    decision: str  # "grant" | "step_up" | "deny"
+    risk_score: float
+    token: Optional[str] = None
